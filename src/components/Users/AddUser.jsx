@@ -2,7 +2,8 @@ import PropTypes from "prop-types";
 import Card from "../UI/Card";
 import classes from "./AddUser.module.css";
 
-const AddUser = (props) => {
+/*eslint no-unused-vars: ["error", { "argsIgnorePattern": "^_" }]*/
+const AddUser = (_props) => {
     const addUserHandler = (event) => {
         event.preventDefault();
     };
