@@ -5,8 +5,7 @@ import Button from "../UI/Button";
 import Card from "../UI/Card";
 import classes from "./AddUser.module.css";
 
-/*eslint no-unused-vars: ["error", { "argsIgnorePattern": "^_" }]*/
-const AddUser = (_props) => {
+const AddUser = (props) => {
     const [changedUsername, setChangedUsername] = useState("");
     const [changedAge, setChangedAge] = useState("");
 
@@ -24,7 +23,7 @@ const AddUser = (_props) => {
             return;
         }
 
-        console.log(changedUsername, changedAge);
+        props.onAddUser(changedUsername, changedAge);
         setChangedUsername("");
         setChangedAge("");
     };
@@ -62,6 +61,7 @@ const AddUser = (_props) => {
 
 AddUser.propTypes = {
     name: PropTypes.any,
+    onAddUser: PropTypes.any,
 };
 
 export default AddUser;
