@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import AddUser from "./components/Users/AddUser";
 import UsersList from "./components/Users/UsersList";
 
@@ -11,16 +11,16 @@ function App() {
         setUsersList((prevUsersList) => {
             return [
                 ...prevUsersList,
-                { name: uName, uAge: uAge, id: Math.random().toString() },
+                { name: uName, age: uAge, id: Math.random().toString() },
             ];
         });
     };
 
     return (
-        <div>
+        <Fragment>
             <AddUser onAddUser={handleAddUser} />
             <UsersList users={usersList} />
-        </div>
+        </Fragment>
     );
 }
 
